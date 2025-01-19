@@ -24,5 +24,13 @@ module.exports = {
     res.setHeader( 'Content-Type', 'text/plain' );
     res.setHeader( 'Content-Length', body.length );
     res.end( body );
+  },
+
+  safeRedirect : function ( redirect ){
+    let newRedirect = '/';
+    if ('/admin' === redirect) {
+      newRedirect = '/admin';
+    }
+    return newRedirect;
   }
 };
